@@ -1,0 +1,358 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+@font-face {
+	font-family: Stencil;
+	src: url(./fonts/SFPro-Semibold-Stencil.otf);
+}
+a{
+	text-decoration: none;
+	color: white;
+  }
+html {
+	min-height: 100% !important; 
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: white;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	background: url(imgs/iphone-14-pro-black.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.box{
+    position: absolute;
+    background-color:#c5c5c5;
+    width: 370px;
+    height: 750px;
+    border-radius: 60px;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background:#000 ;
+    border-radius: 60px;
+
+}
+
+.btn{
+    position: absolute;
+    width: 3px;
+    height: 30px;
+    background: radial-gradient(#ccc, #666, #b3b3b3);
+    top: 130px;
+    left: -2px;
+    border-top-left-radius:4px;
+    border-bottom-left-radius:4px;
+    z-index: 10;
+}
+.btn.btn2{
+   top: 200px;
+   height: 50px;
+}
+.btn.btn3{
+   top: 290px;
+   height: 50px;
+}
+.rightSideBtn{
+    position: absolute;
+    width: 3px;
+    height: 70px;
+    background: radial-gradient(#ccc, #666, #b3b3b3);
+    top: 210px;
+    right: -2px;
+    border-top-right-radius:4px;
+    border-bottom-right-radius:4px;
+    z-index: 10;
+}
+
+.bosh-menu{
+    position: absolute;
+    inset: 3px;
+    background-image: url(imgs/iphone-14-pro-black.jpg);
+    border-radius: 60px;
+    background-size:cover;
+    background-position: center;
+    border: 10px solid #000;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.status-bar{
+	box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+	color: white;
+}
+.operator-name{
+	position: absolute;
+    left: 25px;
+    font-size: 14px;
+    color: white;
+  }
+  
+.dynamic-island{
+	width: 107px;
+    height: 28px;
+    background: black;
+    border-radius: 50px;
+    position: absolute;
+    left: 115px;
+    z-index: 99999;
+    transition: all .3s;
+}
+
+.dynamic-island-camera{
+	width: 15px;
+    height: 15px;
+    background: radial-gradient(#4f44b5,#0c0e29,#3d61bb);
+    border-radius: 50%;
+    position: absolute;
+    right: 130px;
+    box-shadow: 0 0 1px grey;
+    z-index: 99999;
+    transition: all .3s;
+}
+
+.cellular{
+	position: absolute;
+    right: 86px;
+    background-image: url(icons/signal.png);
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+    filter: invert(100%);
+}
+.wifi{
+	position: absolute;
+    right: 58px;
+    background-size: cover;
+    filter: invert(100%);
+	width: 16px;
+    height: 16px;
+	background-image: url(icons/wifi.png);
+}
+.battery{
+	width: 20px;
+    height: 8px;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    font-size: 10px;
+    text-align: center;
+    color: #3e3e3e;
+    background: #ffffff;
+    font-weight: bold;
+    position: absolute;
+    right: 25px;
+	line-height: 1;
+}
+.battery::before{
+	content: "";
+	width: 3px;
+    height: 6px;
+    background: #fff;
+    position: absolute;
+    right: -4px;
+    top: 1px;
+    border-radius: 2px;
+	
+}
+
+.lock-screen{
+	color: white;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	position: absolute;
+    top: 55px;
+}
+.date-area{
+	font-size: 16px;
+	margin-bottom: -10px;
+}
+
+.clock-area{
+	font-size: 70px;
+	font-family: 'Monoton', cursive;
+}
+  
+.lock-fade{
+	margin: 0 auto 7px;
+	width: 20px;
+    height: 20px;
+    background-size: cover;
+	background-image: url(icons/lock.png);
+	filter: invert(100%);
+}
+.notifi{
+	position: relative;
+	bottom: 12px;
+	height: 450px;
+    overflow: auto;
+} 
+.notification{
+	margin: 0 auto 12px;
+	width: 75%;
+	padding: 12px;
+	border-radius: 16px;
+	visibility: hidden;
+	background-color: rgba(255, 255, 255, 0.250);
+	transition: all .5s;
+	animation: notification .7s forwards;
+	animation-delay: 2s;
+	color: white;
+	text-align: left;
+	position: relative;
+}
+
+@keyframes notification{
+	from{
+	  top:-200px;
+	  opacity: 0;
+	  visibility: hidden;
+	} to{
+	  top: 20px;
+	  opacity: 1;
+	  visibility: visible;
+	}
+}
+
+.notification:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.social{
+	display: flex;
+    align-items: center;
+}
+.notification-text{
+	font-size: 15px;
+	color:#fff;
+	margin-left: 25px;
+}
+.notification img{
+	width: 20px;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+.flash-and-camera{
+	width: 100%;
+    height: auto;
+    position: absolute;
+    color: white;
+    bottom: 0;
+}
+.flashlight{
+	position: absolute;
+	bottom: 30px;
+	left: 20px;
+	width: 20px;
+    height: 20px;
+	filter: invert(100%);
+	padding: 10px;
+	border-radius: 50px;
+	background-color: rgba(255, 255, 255, 0.337);
+	transition: all .5s;
+	cursor: pointer;
+	z-index: 99999;
+}
+
+.flashlight:hover{
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.camera{
+	position: absolute;
+	bottom: 30px;
+	right: 20px;
+	width: 20px;
+    height: 20px;
+	filter: invert(100%);
+	padding: 10px;
+	border-radius: 50px;
+	background-color: rgba(255, 255, 255, 0.337);
+	z-index: 99999;
+	cursor: pointer;
+	transition: all .5s;
+}
+
+.camera:hover{
+	background-color: rgba(255, 255, 255, 1);
+}
+.swipeup{
+	text-align: center;
+    position: relative;
+    bottom: 30px;
+	-webkit-transform:translateY(50%);	
+	transform:translateY(50%);	
+	-webkit-animation: vertically 5s linear infinite alternate;
+	animation: vertically 5s linear infinite alternate;
+}
+/*animation Swipe up to unlock*/
+@keyframes vertically {
+ 0%   { 
+ -webkit-transform: translateY(50%);
+ transform: translateY(50%); 		
+ }
+ 100% { 
+ -webkit-transform: translateY(-50%);
+ transform: translateY(-50%); 
+ }
+}
+.line{
+	position: absolute;
+	bottom: 15px;
+	width: 100px;
+	height: 5px;
+	border-radius: 50px;
+	background: #fff;
+	left: 125px;
+}
+
+@media only screen and (max-width: 500px) {
+	.box{
+		width: 325px;
+		height: 650px;
+	}
+	.dynamic-island {
+		left: 105px;
+		width: 90px;
+		height: 25px;
+	}
+	.dynamic-island-camera {
+		right: 110px;
+	}
+	.cellular{
+		right: 78px;
+	}
+	.wifi{
+		right: 54px;
+	}
+	.lock-screen{
+		top: 44px;
+	}
+	.clock-area{
+		font-size: 60px;
+	}
+	.notification{
+		width: 80%;
+		padding: 10px;
+	}
+	.line {
+		left: 100px;
+	}
+}
