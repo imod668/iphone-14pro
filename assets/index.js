@@ -17,9 +17,9 @@ function DateTime(){
 };
 setInterval(DateTime, 1000);
 
-var wallArray = ["url('assets/imgs/iphone-14-pro-black.jpg')","url('assets/imgs/iphone-14-pro-gold.jpg')","url('assets/imgs/iphone-14-pro-purple.jpg')","url('assets/imgs/iphone-14-pro-silver.jpg')"];
-var changeWall = document.getElementById("front-cam");
-var i = 0;
+const wallArray = ["url('assets/imgs/iphone-14-pro-black.jpg')","url('assets/imgs/iphone-14-pro-gold.jpg')","url('assets/imgs/iphone-14-pro-purple.jpg')","url('assets/imgs/iphone-14-pro-silver.jpg')"];
+const changeWall = document.querySelector(".camera");
+let i = 0;
 changeWall.addEventListener('click', () =>{
 	i++;
 	if( i >= wallArray.length){
@@ -27,4 +27,10 @@ changeWall.addEventListener('click', () =>{
 	}
 	document.querySelector(".bosh-menu").style.backgroundImage = wallArray[i];
 	document.body.style.backgroundImage = wallArray[i];
+});
+
+let flashlight = document.querySelector(".flashlight");
+let fontclock = document.querySelector(".clock-area");
+flashlight.addEventListener('click', () =>{
+	fontclock.classList.toggle("clock-font");
 });
