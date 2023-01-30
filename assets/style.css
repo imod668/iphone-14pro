@@ -95,7 +95,8 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 20px;
+    /* top: 20px; */
+	top: 10px;
 	color: white;
 }
 .operator-name{
@@ -110,12 +111,25 @@ body{
     height: 28px;
     background: black;
     border-radius: 50px;
-    position: absolute;
-    left: 115px;
-    z-index: 99999;
+    /* position: relative; */
+    /* left: 115px; */
+    z-index: 9;
     transition: all .3s;
 }
-
+.dynamic-island:hover{
+	width: 55%;
+    height: 28px;
+    border-radius: 40px;
+	z-index: 999;
+}
+.dynamic-island-fill{
+	background: black;
+	width: 90%;
+    height: 100px;
+    border-radius: 33px;
+	transition: all .3s;
+	z-index: 999;
+}
 .dynamic-island-camera{
 	width: 15px;
     height: 15px;
@@ -124,7 +138,7 @@ body{
     position: absolute;
     right: 130px;
     box-shadow: 0 0 1px grey;
-    z-index: 99999;
+    z-index: 99;
     transition: all .3s;
 }
 
@@ -322,7 +336,7 @@ body{
 	height: 5px;
 	border-radius: 50px;
 	background: #fff;
-	left: 125px;
+	left: 122px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -356,5 +370,71 @@ body{
 	}
 	.line {
 		left: 100px;
+	}
+}
+/*hello*/
+.hello{
+	color: #35f505;
+	pointer-events: none;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 12px;
+	width: 100%;
+	height: 28px;
+    z-index: 99999;
+    position: relative;
+    top: 0;
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+}
+.dynamic-island:hover .hello{
+	opacity: 1;
+}
+.hello .ghost{
+	width: 20px;
+}
+/*text typing*/
+.wrapper {
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+  flex-wrap: wrap;
+  overflow: hidden;
+  flex-direction: column;
+}
+.static-txt {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.dynamic-txt{
+  color: #0bdfdf;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  background: #000;
+  margin: auto;
+}
+
+.dynamic-txt.after::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid #0bdfdf;
+  animation:  typing 5s steps(26) alternate infinite;
+  background: #000000;
+  overflow: hidden;
+}
+
+@keyframes typing {
+	100%{
+		left: 100%;
+		margin: 0 0 0 10px;
 	}
 }
