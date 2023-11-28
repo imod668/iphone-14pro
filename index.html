@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-    <title>iphone-14-Pro-Max</title>
+    <title>Thuan's contact</title>
 </head>
 <body>
     <div class="box">
@@ -23,7 +23,7 @@
 					
 					<div class="wrapper">
 						<div class="static-txt">I'm a</div>
-						<div class="dynamic-txt">Mrthuan from Tay Ninh with love</div>
+						<div class="dynamic-txt">Mrthuan from Tay Ninh with love_!</div>
 					</div>
 					
 				</div>
@@ -57,7 +57,7 @@
 					<div class="notification">
 					  <a class="link" href="https://twitter.com/th6688" target="_blank">
 						  <div class="social"><img class="img" src="./assets/icons/twitter.png"/>
-							<b>My Twitter</b></div>
+							<b>My Twitter(X)</b></div>
 						  <div class="notification-text">Click here to contact!</div>
 					  </a>
 					</div>
@@ -90,8 +90,27 @@
 			<i class="btn btn3"></i>
 			<i class="rightSideBtn"></i>
 		</div>
-		
+		<div id="blink"></></div>
     </div>
     <script src="./assets/index.js"></script>
+	<script src="./assets/snowfall.js"></script>
+	<script>
+	let snowfall = new Snowfall({
+		// number of snowflakes
+		count: 100,
+		// min/max size
+		minRadius: 5,
+		maxRadius: 30,
+		// min/max speed
+		minSpeed: 0.5,
+		maxSpeed: 1,
+		// custom symbol or text for snowflakes
+		text: "\u2744", 
+		// color of snowflakes
+		color: "#ffffff",
+		// z-index for the canvas
+		zIndex: "1000" 
+	});
+	</script>
 </body>
 </html>

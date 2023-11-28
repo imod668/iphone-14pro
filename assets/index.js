@@ -1,15 +1,17 @@
 //date & time
 function DateTime(){
 	const d = new Date();
-	const day = d.getDate();
-	const month = d.getMonth() + 1;
-	const year = d.getYear();
-	const dateName = ["Chủ Nhật","Thứ Hai","Thứ Ba","Thứ Tư","Thứ Năm","Thứ Sáu","Thứ Bảy"];
-	const weekday = dateName[d.getDay()];
+	let day = d.getDate();
+	let month = d.getMonth() + 1;
+	let year = d.getYear();
+	let dateName = ["Chủ Nhật","Thứ Hai","Thứ Ba","Thứ Tư","Thứ Năm","Thứ Sáu","Thứ Bảy"];
+	let weekday = dateName[d.getDay()];
 	let hours = d.getHours();
 	let minutes = d.getMinutes();
 	hours   = hours < 10 ? '0' + hours : hours ;
 	minutes = minutes < 10 ? '0' + minutes : minutes;
+	day = day < 10 ? '0' + day : day ;
+	month = month < 10 ? '0' + month : month ;
 	
 	document.querySelector(".day-name").innerText = weekday + ',';
 	document.querySelector(".day").innerText = day;
@@ -32,10 +34,24 @@ changeWall.addEventListener('click', () =>{
 });
 
 //change font time
-let flashlight = document.querySelector(".flashlight");
 let fontclock = document.querySelector(".clock-area");
-flashlight.addEventListener('click', () =>{
+fontclock.addEventListener('click', () => {
 	fontclock.classList.toggle("clock-font");
+})
+
+//flashlight
+let flashlight = document.querySelector(".flashlight");
+flashlight.addEventListener('click', () => {
+
+	let bg_flashblink = setInterval(() => {
+		document.querySelector("#blink").classList.toggle("flashblink");
+	},200)
+	
+	setTimeout(() => { 
+		document.querySelector("#blink").classList.remove("flashblink");
+		clearInterval(bg_flashblink);
+    },800);
+	
 });
 
 //dynamic-island
