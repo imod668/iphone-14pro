@@ -57,7 +57,6 @@ flashlight.addEventListener('click', () => {
 //dynamic-island
 let dynamic_island = document.getElementById("dynamic_island");
 let wrapper = document.querySelector(".wrapper");
-let typing = document.querySelector(".dynamic-txt");
 
 dynamic_island.addEventListener('click', () =>{
 	const contain_class = dynamic_island.classList.contains('dynamic-island')
@@ -65,13 +64,10 @@ dynamic_island.addEventListener('click', () =>{
 		dynamic_island.classList.add("dynamic-island-fill");
 		dynamic_island.classList.remove("dynamic-island");
 		wrapper.style.visibility = "visible";
-		typing.classList.add('after');
 	}else{
 		dynamic_island.classList.remove("dynamic-island-fill");
 		dynamic_island.classList.add("dynamic-island");
 		wrapper.style.visibility = "hidden";
-		typing.classList.remove("after");
-
 	}
 });
 window.addEventListener('click', (e) => {
@@ -79,6 +75,5 @@ window.addEventListener('click', (e) => {
 		dynamic_island.classList.remove("dynamic-island-fill");
 		dynamic_island.classList.add("dynamic-island");
 		wrapper.style.visibility = "hidden";
-		typing.classList.remove("after");
 	}
 });

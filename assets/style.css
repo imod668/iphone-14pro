@@ -395,7 +395,7 @@ body{
 .hello .ghost{
 	width: 20px;
 }
-/*text typing*/
+/*text dynamic-island*/
 .wrapper {
   display: flex;
   justify-content: center;
@@ -403,42 +403,12 @@ body{
   flex-wrap: wrap;
   overflow: hidden;
   flex-direction: column;
-}
-.static-txt {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
+  padding: 5px;
   text-align: center;
-}
-.dynamic-txt{
-  color: #0bdfdf;
-  list-style: none;
   font-size: 18px;
-  font-weight: 500;
-  position: relative;
-  top: 0;
-  background: #000;
-  margin: auto;
+  color: #1bdff5;
 }
 
-.dynamic-txt.after::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-left: 2px solid #0bdfdf;
-  animation:  typing 5s steps(28) alternate infinite;
-  background: #000000;
-  overflow: hidden;
-}
-
-@keyframes typing {
-	100%{
-		left: 100%;
-		margin: 0 0 0 10px;
-	}
-}
 /* flashlight */
 .flashblink{
 	position: absolute;
